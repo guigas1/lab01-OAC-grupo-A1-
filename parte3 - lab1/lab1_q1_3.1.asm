@@ -1,5 +1,4 @@
 .data
-    # Você pode até colocar textos para não ficar uma tela preta confusa
     msg_x: .string "Digite x: "
     msg_a: .string "Digite a: "
     msg_b: .string "Digite b: "
@@ -10,7 +9,6 @@
 .globl main
 
 main:
-    # Lê x e guarda em fs0
     li a7, 4
     la a0, msg_x
     ecall
@@ -18,7 +16,6 @@ main:
     ecall
     fmv.s fs0, fa0      
 
-    # Lê a e guarda em fs1
     li a7, 4
     la a0, msg_a
     ecall
@@ -26,7 +23,6 @@ main:
     ecall
     fmv.s fs1, fa0      
 
-    # Lê b e guarda em fs2
     li a7, 4
     la a0, msg_b
     ecall
@@ -34,7 +30,6 @@ main:
     ecall
     fmv.s fs2, fa0      
 
-    # Lê c e guarda em fs3
     li a7, 4
     la a0, msg_c
     ecall
