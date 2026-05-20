@@ -20,14 +20,13 @@
 	ecall
 	fmv.s	fs3, fa0	# c
 	
-	fmul.s	fs4, fs2, fs0	# b*x fs2 liberado
-	fmul.s	fs0, fs0, fs0	# fs2 = x^2
-	fmul.s	fs1, fs1, fs0	# a*x^2
-	fadd.s	fs2, fs1, fs4	# a*x^2 + b*x
-	fadd.s	fa0, fs2, fs3	# a*x^2 + b*x + c
+	fmul.s  ft0, fa2, fa0   # ft0 = b * x
+    fmul.s  ft1, fa0, fa0   # ft1 = x^2
+    fmul.s  ft2, fa1, ft1   # ft2 = a * x^2
+    fadd.s  ft3, ft2, ft0   # ft3 = a*x^2 + b*x
+    fadd.s  fa0, ft3, fa3   # fa0 = a*x^2 + b*x + c
 	
 	li	a7, 2		# print float f(x)
 	ecall
 	
-	li	a7, 10		# exit
-	ecall
+	ret
