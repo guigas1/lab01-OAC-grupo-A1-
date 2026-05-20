@@ -26,9 +26,6 @@
 .text
 .globl main
 
-# =================================================================
-# MAIN (Lendo do Teclado em Loop Infinito)
-# =================================================================
 main:
 main_loop:
     # 1. Leitura dos coeficientes pelo Teclado
