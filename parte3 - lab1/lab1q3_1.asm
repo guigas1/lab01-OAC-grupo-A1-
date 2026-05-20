@@ -2,7 +2,6 @@
 
 .text
 #float fx (float x, float a, float b, float c)
-#?(?)=?.?2+?.?+c
 
 	li	a7, 6
 	ecall
